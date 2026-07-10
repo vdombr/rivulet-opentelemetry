@@ -1,6 +1,6 @@
 # rivulet-opentelemetry
 
-OpenTelemetry integration for [Rivulet](https://github.com/mrvold/rivulet).
+OpenTelemetry integration for [Rivulet](https://github.com/vdombr/rivulet).
 
 Provides per-operation and per-step tracing, log correlation, and request/DB
 metrics via the single `grafana/otel-lgtm` image (OTel Collector, Tempo,
