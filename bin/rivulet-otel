@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative '../lib/rivulet/otel/cli'
+
+Dry::CLI.new(Rivulet::OTel::CLI::Commands).call
