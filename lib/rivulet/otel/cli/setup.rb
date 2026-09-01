@@ -11,11 +11,7 @@ module Rivulet
           def call(**)
             validate_app!
 
-            service_name = detect_service_name
-            puts "Detected service name: #{service_name}"
-
             generate_files
-            patch_config_ru
             patch_application_config
             patch_docker_compose
 
@@ -38,12 +34,6 @@ module Rivulet
             end
           end
 
-          def detect_service_name
-            content = File.read('config/application.rb')
-            match = content.match(/config\.logger\.name\s*=\s*:(\w+)/)
-            match ? match[1] : File.basename(Dir.pwd)
-          end
-
           def generate_files
             FileUtils.mkdir_p('config/initializers')
 
@@ -53,16 +43,6 @@ module Rivulet
           def write(path, content)
             File.write(path, content)
             puts "  create  #{path}"
-          end
-
-          def patch_config_ru
-            path = 'config.ru'
-            content = File.read(path)
-            return puts "  skip    #{path} (already patched)" if content.include?("require_relative 'config/initializers/opentelemetry'")
-
-            patched = content.sub(/(require 'rivulet')/, "\\1\nrequire_relative 'config/initializers/opentelemetry'")
-            File.write(path, patched)
-            puts "  patch   #{path}"
           end
 
           def patch_application_config
@@ -130,7 +110,7 @@ module Rivulet
             <<~RUBY
               require 'rivulet/opentelemetry'
 
-              Rivulet::OTel.configure(service_name: '#{detect_service_name}')
+              Rivulet::OTel.configure(service_name: Rivulet.config.app.name)
             RUBY
           end
         end

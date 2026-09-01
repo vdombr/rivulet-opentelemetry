@@ -25,7 +25,6 @@ docker compose up --build
 
 The setup command:
 - Generates `config/initializers/opentelemetry.rb`
-- Patches `config.ru` to load the initializer
 - Patches `config/application.rb` to set `config.telemetry.sink` and `config.logger.engine`
 - Adds a single `lgtm` service to `docker-compose.yml`
 
