@@ -5,14 +5,15 @@ Gem::Specification.new do |spec|
   spec.version = Rivulet::OTel::VERSION
   spec.summary = 'OpenTelemetry integration for Rivulet framework'
   spec.authors = ['Vladimir Dombrovskiy <vold@fastmail.com>']
+  spec.license = 'Apache-2.0'
 
   spec.files         = Dir['lib/**/*.rb'] + Dir['bin/*']
   spec.executables   = ['rivulet-otel']
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 3.2'
+  spec.required_ruby_version = '>= 3.3'
 
-  spec.add_dependency 'rivulet-rb'
+  spec.add_dependency 'rivulet-rb', '>= 0.3.0'
   spec.add_dependency 'opentelemetry-sdk'
   spec.add_dependency 'opentelemetry-exporter-otlp'
   spec.add_dependency 'opentelemetry-instrumentation-rack'

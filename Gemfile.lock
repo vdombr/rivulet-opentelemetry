@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rivulet-opentelemetry (0.1.0)
+    rivulet-opentelemetry (0.2.0)
       dry-cli
       opentelemetry-exporter-otlp
       opentelemetry-exporter-otlp-logs
@@ -10,7 +10,7 @@ PATH
       opentelemetry-logs-sdk
       opentelemetry-metrics-sdk
       opentelemetry-sdk
-      rivulet-rb
+      rivulet-rb (>= 0.3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -163,7 +163,7 @@ GEM
     protocol-http (0.62.2)
     rack (3.2.6)
     rake (13.4.2)
-    rivulet-rb (0.2.4)
+    rivulet-rb (0.3.0)
       dry-auto_inject
       dry-cli
       dry-configurable
@@ -260,8 +260,8 @@ CHECKSUMS
   protocol-http (0.62.2) sha256=e1c1f2f56029c1af8c4e2b8a67d0d096c76620f3afd8d99d1dcd2f6b8ffa773b
   rack (3.2.6) sha256=5ed78e1f73b2e25679bec7d45ee2d4483cc4146eb1be0264fc4d94cb5ef212c2
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
-  rivulet-opentelemetry (0.1.0)
-  rivulet-rb (0.2.4) sha256=3ae9a8c6f90db908ddecf43dfaf47a567a854ced67f724b69c08fb18879ec11b
+  rivulet-opentelemetry (0.2.0)
+  rivulet-rb (0.3.0) sha256=59bf59334493cbd6bafda24a79b264a66ef6305728930e8ebdf6e10a17a56c63
   rspec (3.13.2) sha256=206284a08ad798e61f86d7ca3e376718d52c0bc944626b2349266f239f820587
   rspec-core (3.13.6) sha256=a8823c6411667b60a8bca135364351dda34cd55e44ff94c4be4633b37d828b2d
   rspec-expectations (3.13.5) sha256=33a4d3a1d95060aea4c94e9f237030a8f9eae5615e9bd85718fe3a09e4b58836
