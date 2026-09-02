@@ -1,5 +1,6 @@
-require 'rspec/core/rake_task'
+require "bundler/gem_tasks"
 
-RSpec::Core::RakeTask.new(:spec)
+Rake::Task["release"].clear
 
-task default: :spec
+desc "Build and publish the gem without Git operations"
+task release: ["build", "release:rubygem_push"]
